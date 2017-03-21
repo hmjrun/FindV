@@ -37,9 +37,14 @@ def wx_utilsCheckSignature(signature, timestamp, nonce):
 # def wx_getTimestamp():
 #     return int(time.time())
 
-# def check_signature(signature, timestamp, nonce):
-#     token = WX_TOKEN
-#     L = [timestamp, nonce, token]
-#     L.sort()
-#     s = L[0] + L[1] + L[2]
-#     return hashlib.sha1(s).hexdigest() == signature
+def check_signature(signature, timestamp, nonce):
+    token = WX_TOKEN
+    L = [timestamp, nonce, token]
+    logger.info("Before sort String_list: {}".format(L))
+    L.sort()
+    s = L[0] + L[1] + L[2]
+    logger.info("After sort String_list: {}".format(s))
+    h_value = hashlib.sha1(s.encode('utf8')).hexdigest()
+    logger.info("Signature Received: {}".format(signature))
+    logger.info("Signature Expected: {}".format(h_value))
+    return h_value == signature
