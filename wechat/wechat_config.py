@@ -1,5 +1,5 @@
 #验证3r服务器
-WX_TOKEN = ''
+WX_TOKEN = 'weixin1008'
 
 #小程序
 WX_APPID = 'wx426b3015555a46be'
