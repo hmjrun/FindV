@@ -112,8 +112,8 @@ LOGGING = {
     'version': 1, # 标示配置模板版本，int 类型，目前只接收 `1`这个值。
     'disable_existing_loggers': False,#default True，all loggers from the default configuration will be disabled.设置成false就对了，
     'formatters': {
-        'verbose': {#详细日志格式
-            'format': '%(levelname)s %(asctime)s %(pathname)s %(funcName)s : %(lineno)d : %(process)d %(thread)d %(message)s'
+        'verbose': {#详细日志格式 
+            'format': '%(levelname)s %(asctime)s %(pathname)s : FunctionName: %(funcName)s In %(lineno)d Lines logMessage: %(message)s : %(process)d %(thread)d '
         },
         'simple': {#简单日志格式
             'format': '%(levelname)s %(message)s'
